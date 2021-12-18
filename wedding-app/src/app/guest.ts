@@ -1,17 +1,17 @@
 export class Guest {
     
-    firstName : string;
-    lastName : string;
-    partyId : string;
+    first_name : string;
+    last_name : string;
+    party_id : string;
     
-    constructor(firstName : string = "", lastName : string = "" , partyId : string = "" ){
-        this.firstName = firstName;
-        this.lastName = lastName;
-        this.partyId = partyId;
+    constructor(first_name : string = "", last_name : string = "" , party_id : string = "" ){
+        this.first_name = first_name;
+        this.last_name = last_name;
+        this.party_id = party_id;
     }
     
     fullName() : string{
-        return this.firstName + " " + this.lastName;
+        return this.first_name + " " + this.last_name;
     }
     
     

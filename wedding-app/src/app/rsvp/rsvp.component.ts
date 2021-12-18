@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { GuestService } from '../guest.service';
+import { Guest } from '../guest';
 
 @Component({
   selector: 'app-rsvp',
@@ -7,9 +9,15 @@ import { Component, OnInit } from '@angular/core';
 })
 export class RsvpComponent implements OnInit {
 
-  constructor() { }
+  public guests : Guest[] = [];
+
+  constructor(private guestService: GuestService ) { }
 
   ngOnInit(): void {
+
+    this.guestService.getGuests().subscribe(
+      (response)  => { this.guests = response; }
+      ); 
   }
 
 }

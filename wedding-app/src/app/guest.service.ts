@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { map } from 'rxjs/operators';
+import { Guest } from './guest';
 
 @Injectable({
   providedIn: 'root'
@@ -14,14 +15,7 @@ export class GuestService {
   constructor(private client: HttpClient) { }
   
   getGuests() : Observable<Guest[]>{
-	  return this.client.get(this.baseUrl + '/guests')
-	  .pipe(
-		map((guests : any[]) => {
-			
-			return guests.map(guest => new Guest(guest.first_name, guest.last_name, guest.party_id));
-						
-		})
-	  );
+	  return this.client.get<Guest[]>(this.baseUrl + '/guests');
   }
   
   

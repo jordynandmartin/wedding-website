@@ -7,6 +7,7 @@ import { HomeComponent } from './home/home.component';
 import { RsvpComponent } from './rsvp/rsvp.component';
 import { GalleryComponent } from './gallery/gallery.component';
 import { RegistryComponent } from './registry/registry.component';
+import { HttpClientModule } from  '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -18,7 +19,8 @@ import { RegistryComponent } from './registry/registry.component';
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]
