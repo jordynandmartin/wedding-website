@@ -1,7 +1,30 @@
 
-<div class="container-fluid">
-	<div class="row">
-		<div class="col section-title">Guests</div>
+<div *ngIf="!rsvpSubmitted" class="container-fluid">
+	<div class="row align-items-center justify-content-center">
+		<div class="col-12 py-5 text-center">
+			<h1 class="display-3">RSVP</h1>
+			<h2 class="display-7 fancy-text">we thank you in advance</h2>
+		</div>
+		<div class="col-lg-6 col-md-6 col-8">
+			<form>
+				<div class="form-group py-2">
+					<label class="pb-2" for="attendeesList">Please list the names of all attendees in your party</label>
+					<textarea class="form-control" id="attendeesList" rows="3"></textarea>
+				</div>
+				<div class="form-group pb-4 pt-2">
+					<label class="pb-2" for="attendeeNumber">Number of attendees</label>
+					<input class="form-control" id="attendeeNumber"/>
+				</div>
+				<button (click)="submit()" type="submit" class="btn btn-outline-dark">SUBMIT</button>
+			</form>	
+		</div>
 	</div>
-	<div *ngFor="let guest of guests" class="row pt-3 pb-3">{{guest.fullName()}}</div>
 </div>
+<div *ngIf="rsvpSubmitted" class="container-fluid">
+	<div class="row align-items-center justify-content-center">
+		<div class="col-12 text-center pt-6">
+			<h1 class="display-3 fancy-text">Thank you</h1>
+			<p>Your RSVP has been submitted</p>
+		</div>
+</div>
+

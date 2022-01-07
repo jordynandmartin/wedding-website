@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import { GuestService } from '../guest.service';
-import { Guest } from '../guest';
 
 @Component({
   selector: 'app-rsvp',
@@ -9,15 +8,16 @@ import { Guest } from '../guest';
 })
 export class RsvpComponent implements OnInit {
 
-  public guests : Guest[] = [];
-
+  public rsvpSubmitted: boolean = false;
+  
   constructor(private guestService: GuestService ) { }
 
   ngOnInit(): void {
 
-    this.guestService.getGuests().subscribe(
-      (response)  => { this.guests = response; }
-      ); 
+  }
+
+  submit() : void {
+    this.rsvpSubmitted = true;
   }
 
 }

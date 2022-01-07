@@ -6,6 +6,7 @@ import {GalleryComponent} from './gallery/gallery.component';
 import { RegistryComponent } from './registry/registry.component';
 
 const routes: Routes = [
+{path: '', redirectTo: 'home', pathMatch: 'full' },
 {path: 'home', component: HomeComponent },
 {path: 'rsvp', component: RsvpComponent},
 {path: 'registry', component: RegistryComponent},
