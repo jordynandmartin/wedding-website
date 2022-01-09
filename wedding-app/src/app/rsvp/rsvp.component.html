@@ -5,17 +5,19 @@
 			<h1 class="display-3">RSVP</h1>
 			<h2 class="display-7 fancy-text">we thank you in advance</h2>
 		</div>
-		<div class="col-lg-6 col-md-6 col-8">
-			<form>
+		<div class="col-lg-6 col-md-6 col-8 pb-6">
+			<form [formGroup]= "rsvpForm" (ngSubmit)="submit()">
 				<div class="form-group py-2">
 					<label class="pb-2" for="attendeesList">Please list the names of all attendees in your party</label>
-					<textarea class="form-control" id="attendeesList" rows="3"></textarea>
+					<textarea formControlName="guestNames" class="form-control" id="attendeesList" rows="3"></textarea>
+					<span *ngIf="guestNames.invalid">You must provide a list of names</span>
 				</div>
 				<div class="form-group pb-4 pt-2">
 					<label class="pb-2" for="attendeeNumber">Number of attendees</label>
-					<input class="form-control" id="attendeeNumber"/>
+					<input formControlName="guestNumber" class="form-control" id="attendeeNumber"/>
+					<span *ngIf="guestNumber.invalid">You must provide a whole number</span>
 				</div>
-				<button (click)="submit()" type="submit" class="btn btn-outline-dark">SUBMIT</button>
+				<button type="submit" class="btn btn-outline-dark">SUBMIT</button>
 			</form>	
 		</div>
 	</div>
