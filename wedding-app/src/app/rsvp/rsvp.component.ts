@@ -14,6 +14,8 @@ export class RsvpComponent implements OnInit {
 
   public rsvpSubmitted: boolean = false;
   public party: Party = new Party();
+  public errorOccured : boolean = false;
+  public loading : boolean = false;
 
   public rsvpForm : FormGroup = new FormGroup({
     guestNumber: new FormControl('', [Validators.required, 
@@ -38,11 +40,22 @@ export class RsvpComponent implements OnInit {
 
   submit() : void {
       if(this.rsvpForm.valid){
+        this.loading = true;
         this.party.guestNumber = parseInt(this.guestNumber.value);
         this.party.guestNames = this.guestNames.value;
-        this.rsvpSubmitted = true;
 
-        console.log(this.party);
+        this.guestService.addGuests(this.party).subscribe(
+          (response : any) => {
+            this.loading = false;
+            this.rsvpSubmitted = true;
+            console.log(response);
+          },
+          (error) => {
+            this.loading = false;
+            this.errorOccured = true;
+            console.log(error);
+          }
+        );
       }
   }
 

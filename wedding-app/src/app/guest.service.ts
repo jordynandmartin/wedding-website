@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { HttpClient, HttpHeaders } from '@angular/common/http';
+import { HttpClient, HttpHeaders, HttpResponse } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { map } from 'rxjs/operators';
 import { Party } from './party';
@@ -10,11 +10,13 @@ import { Party } from './party';
 
 export class GuestService {
 	
-  private baseUrl: string = "https://quiet-plains-44094.herokuapp.com";
+  private baseUrl: string = "https://weddingrsvp-api.herokuapp.com";
 	
   constructor(private client: HttpClient) { }
   
-  
+  getGuests() : Observable<any> {
+    return this.client.get(this.baseUrl + "/guests");
+  }
   
   addGuests(party : Party) : Observable<any>{
 	  
@@ -22,7 +24,12 @@ export class GuestService {
      .set('Content-Type', 'application/json');
 	  
 	  
-	  return this.client.post(this.baseUrl + "/guests", party, {headers: httpHeaders, responseType: "text"});
+	  return this.client.post(this.baseUrl + "/addGuests", 
+    party, 
+    {
+      headers: httpHeaders, 
+      responseType: 'text'
+    });
   } 
   
   

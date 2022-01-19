@@ -9,6 +9,8 @@ import { RsvpComponent } from './rsvp/rsvp.component';
 import { GalleryComponent } from './gallery/gallery.component';
 import { RegistryComponent } from './registry/registry.component';
 import { HttpClientModule } from  '@angular/common/http';
+import { AdminComponent } from './admin/admin.component';
+import { NavigationComponent } from './navigation/navigation.component';
 
 @NgModule({
   declarations: [
@@ -16,7 +18,9 @@ import { HttpClientModule } from  '@angular/common/http';
     HomeComponent,
     RsvpComponent,
     GalleryComponent,
-    RegistryComponent
+    RegistryComponent,
+    AdminComponent,
+    NavigationComponent
   ],
   imports: [
     BrowserModule,

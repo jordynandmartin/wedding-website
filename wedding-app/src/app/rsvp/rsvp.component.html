@@ -1,5 +1,5 @@
-
-<div *ngIf="!rsvpSubmitted" class="container-fluid">
+<app-navigation></app-navigation>
+<div *ngIf="!(rsvpSubmitted || errorOccured || loading)" class="container-fluid">
 	<div class="row align-items-center justify-content-center">
 		<div class="col-12 py-5 text-center">
 			<h1 class="display-3">RSVP</h1>
@@ -10,12 +10,12 @@
 				<div class="form-group py-2">
 					<label class="pb-2" for="attendeesList">Please list the names of all attendees in your party</label>
 					<textarea formControlName="guestNames" class="form-control" id="attendeesList" rows="3"></textarea>
-					<span *ngIf="guestNames.invalid">You must provide a list of names</span>
+					<span class="text-danger" *ngIf="guestNames.invalid && (guestNames.dirty || guestNames.touched)">You must provide a list of names</span>
 				</div>
 				<div class="form-group pb-4 pt-2">
 					<label class="pb-2" for="attendeeNumber">Number of attendees</label>
 					<input formControlName="guestNumber" class="form-control" id="attendeeNumber"/>
-					<span *ngIf="guestNumber.invalid">You must provide a whole number</span>
+					<span class="text-danger" *ngIf="guestNumber.invalid && (guestNumber.dirty || guestNumber.touched)">You must provide a whole number</span>
 				</div>
 				<button type="submit" class="btn btn-outline-dark">SUBMIT</button>
 			</form>	
@@ -28,5 +28,21 @@
 			<h1 class="display-3 fancy-text">Thank you</h1>
 			<p>Your RSVP has been submitted</p>
 		</div>
+	</div>
+</div>
+<div *ngIf="errorOccured" class="container-fluid">
+	<div class="row align-items-center justify-content-center">
+		<div class="col-12 text-center pt-6">
+			<h1 class="display-3 fancy-text">Oops...</h1>
+			<p>An unexpected error has occured. Check your internet connection.</p>
+		</div>
+	</div>
+</div>
+<div *ngIf="loading" class="container-fluid">
+	<div class="row align-items-center justify-content-center">
+		<div class="col-12 text-center pt-6">
+			<h1 class="display-3 fancy-text">Loading...</h1>
+		</div>
+	</div>
 </div>
 

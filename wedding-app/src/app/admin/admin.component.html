@@ -1,0 +1,38 @@
+<div *ngIf="!loading" class="container-fluid align-items-center justify-content-center">
+    <div class="row py-5 text-center">
+        <div class="col-12">
+            <h1 class="fancy-text display-3">Guest List</h1>
+        </div>
+    </div>
+    <div class= "row">
+        <div class="col-10 offset-1">
+            <table class="table">
+                <thead>
+                  <tr>
+                    <th scope="col">GUESTS</th>
+                    <th scope="col">NUMBER</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr *ngFor="let party of parties">
+                    <td>{{party.guestNames}}</td>
+                    <td>{{party.guestNumber}}</td>
+                  </tr>
+                </tbody>
+                <tfoot>
+                    <tr>
+                        <td>TOTAL</td>
+                        <td class="">{{totalGuests}}</td>
+                    </tr>
+                </tfoot>
+              </table>
+        </div>
+    </div>
+</div>
+<div *ngIf="loading" class="container-fluid">
+    <div class="row align-items-center justify-content-center">
+        <div class="col-12 text-center pt-6">
+            <h1 class="display-3 fancy-text">Loading...</h1>
+        </div>
+    </div>
+</div>
