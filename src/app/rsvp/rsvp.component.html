@@ -1,4 +1,5 @@
 <app-navigation></app-navigation>
+
 <div *ngIf="!(rsvpSubmitted || errorOccured || loading)" class="container-fluid">
 	<div class="row align-items-center justify-content-center">
 		<div class="col-12 py-5 text-center">
@@ -17,7 +18,7 @@
 					<input formControlName="guestNumber" class="form-control" id="attendeeNumber"/>
 					<span class="text-danger" *ngIf="guestNumber.invalid && (guestNumber.dirty || guestNumber.touched)">You must provide a whole number</span>
 				</div>
-				<button type="submit" class="btn btn-outline-dark">SUBMIT</button>
+				<button type="submit" class="btn btn-outline-dark w-100">SUBMIT</button>
 			</form>	
 		</div>
 	</div>
