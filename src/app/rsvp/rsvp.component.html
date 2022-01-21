@@ -1,20 +1,29 @@
+<div class="container d-none d-md-block">
+	<div class ="row text-center pt-5 pb-3">
+		<div class="col">
+			<h1 class="display-4 d-inline fancy-text">Rebecca</h1>
+			<p class="d-inline">&</p>
+			<h1 class="display-4 d-inline fancy-text">Fasih</h1>
+		</div>
+	</div>
+</div>
 <app-navigation></app-navigation>
 
 <div *ngIf="!(rsvpSubmitted || errorOccured || loading)" class="container-fluid">
 	<div class="row align-items-center justify-content-center">
-		<div class="col-12 py-5 text-center">
+		<!--<div class="col-12 py-5 text-center">
 			<h1 class="display-3">RSVP</h1>
 			<h2 class="display-7 fancy-text">we thank you in advance</h2>
-		</div>
-		<div class="col-lg-6 col-md-6 col-8 pb-6">
+		</div>-->
+		<div class="col-lg-6 col-md-6 col-8 py-4">
 			<form [formGroup]= "rsvpForm" (ngSubmit)="submit()">
 				<div class="form-group py-2">
-					<label class="pb-2" for="attendeesList">Please list the names of all attendees in your party</label>
+					<label class="pb-2" for="attendeesList">LIST THE NAMES OF ALL ATTENDEES</label>
 					<textarea formControlName="guestNames" class="form-control" id="attendeesList" rows="3"></textarea>
 					<span class="text-danger" *ngIf="guestNames.invalid && (guestNames.dirty || guestNames.touched)">You must provide a list of names</span>
 				</div>
 				<div class="form-group pb-4 pt-2">
-					<label class="pb-2" for="attendeeNumber">Number of attendees</label>
+					<label class="pb-2" for="attendeeNumber">NUMBER OF ATTENDEES</label>
 					<input formControlName="guestNumber" class="form-control" id="attendeeNumber"/>
 					<span class="text-danger" *ngIf="guestNumber.invalid && (guestNumber.dirty || guestNumber.touched)">You must provide a whole number</span>
 				</div>
