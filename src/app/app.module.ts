@@ -11,6 +11,7 @@ import { RegistryComponent } from './registry/registry.component';
 import { HttpClientModule } from  '@angular/common/http';
 import { AdminComponent } from './admin/admin.component';
 import { NavigationComponent } from './navigation/navigation.component';
+import { LoadingComponent } from './loading/loading.component';
 
 @NgModule({
   declarations: [
@@ -20,7 +21,8 @@ import { NavigationComponent } from './navigation/navigation.component';
     GalleryComponent,
     RegistryComponent,
     AdminComponent,
-    NavigationComponent
+    NavigationComponent,
+    LoadingComponent
   ],
   imports: [
     BrowserModule,

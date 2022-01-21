@@ -29,10 +29,4 @@
         </div>
     </div>
 </div>
-<div *ngIf="loading" class="container-fluid">
-    <div class="row align-items-center justify-content-center">
-        <div class="col-12 text-center pt-6">
-            <h1 class="display-3 fancy-text">Loading...</h1>
-        </div>
-    </div>
-</div>
+<app-loading *ngIf="loading"></app-loading>

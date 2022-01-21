@@ -29,16 +29,11 @@ $navbar-light-hover-color: $blush-pink;
 $navbar-light-active-color: $blush-pink;
 $btn-primary-hover-color: $blush-pink;
 
-@import url('https://fonts.googleapis.com/css2?family=Parisienne&display=swap');
 @import "~bootstrap/scss/bootstrap";
 
 @font-face {
   font-family: 'John Davidson Regular';
   src: url('/assets/john_davidson/John Davidson Demo.ttf');
-}
-
-.fancy-text-2{
-    font-family: 'Parisienne', cursive;
 }
 
 .fancy-text{

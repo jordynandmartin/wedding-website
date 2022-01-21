@@ -34,25 +34,19 @@
 </div>
 <div *ngIf="rsvpSubmitted" class="container-fluid">
 	<div class="row align-items-center justify-content-center">
-		<div class="col-12 text-center pt-6">
-			<h1 class="display-3 fancy-text">Thank you</h1>
+		<div class="col-12 text-center pt-4">
+			<h1 class="display-3">Thank you</h1>
 			<p>Your RSVP has been submitted</p>
 		</div>
 	</div>
 </div>
 <div *ngIf="errorOccured" class="container-fluid">
 	<div class="row align-items-center justify-content-center">
-		<div class="col-12 text-center pt-6">
-			<h1 class="display-3 fancy-text">Oops...</h1>
+		<div class="col-12 text-center pt-4">
+			<h1 class="display-3">Oops...</h1>
 			<p>An unexpected error has occured. Check your internet connection.</p>
 		</div>
 	</div>
 </div>
-<div *ngIf="loading" class="container-fluid">
-	<div class="row align-items-center justify-content-center">
-		<div class="col-12 text-center pt-6">
-			<h1 class="display-3 fancy-text">Loading...</h1>
-		</div>
-	</div>
-</div>
+<app-loading *ngIf="loading"></app-loading>
 
