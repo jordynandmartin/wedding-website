@@ -11,10 +11,6 @@
 
 <div *ngIf="!(rsvpSubmitted || errorOccured || loading)" class="container-fluid">
 	<div class="row align-items-center justify-content-center">
-		<!--<div class="col-12 py-5 text-center">
-			<h1 class="display-3">RSVP</h1>
-			<h2 class="display-7 fancy-text">we thank you in advance</h2>
-		</div>-->
 		<div class="col-lg-6 col-md-6 col-8 py-4">
 			<form [formGroup]= "rsvpForm" (ngSubmit)="submit()">
 				<div class="form-group py-2">
@@ -34,8 +30,8 @@
 </div>
 <div *ngIf="rsvpSubmitted" class="container-fluid">
 	<div class="row align-items-center justify-content-center">
-		<div class="col-12 text-center pt-4">
-			<h1 class="display-3">Thank you</h1>
+		<div class="col-12 text-center pt-5">
+			<h3>THANK YOU</h3>
 			<p>Your RSVP has been submitted</p>
 		</div>
 	</div>
@@ -43,7 +39,7 @@
 <div *ngIf="errorOccured" class="container-fluid">
 	<div class="row align-items-center justify-content-center">
 		<div class="col-12 text-center pt-4">
-			<h1 class="display-3">Oops...</h1>
+			<h3>Oops...</h3>
 			<p>An unexpected error has occured. Check your internet connection.</p>
 		</div>
 	</div>
