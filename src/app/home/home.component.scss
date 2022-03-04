@@ -1,0 +1,10 @@
+.hero-image {
+    background-image: 
+    linear-gradient(to bottom, rgb(10, 10, 10, 0.1), rgba(255,0,0,0)), 
+    url("../../assets/intro-image.jpg"); 
+    min-height: 650px; 
+    width: 100%;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+  }

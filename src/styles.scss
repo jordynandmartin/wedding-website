@@ -1,5 +1,7 @@
 $spacer: 1rem;
 $blush-pink: rgb(228, 192, 192);
+$white: rgb(255, 255, 255);
+$light-pink: #f8f6f3;
 
 $spacers: (
   0: 0,
@@ -24,23 +26,25 @@ $navbar-toggler-focus-width: 0;
 
 $table-th-font-weight: normal;
 
-$link-hover-color: $blush-pink;
-$navbar-light-hover-color: $blush-pink;
-$navbar-light-active-color: $blush-pink;
-$btn-primary-hover-color: $blush-pink;
+$navbar-dark-hover-color: $blush-pink;
+$navbar-dark-active-color: $blush-pink;
+$navbar-dark-color: $white;
 
 
 @import "~bootstrap/scss/bootstrap";
+@import url('https://fonts.googleapis.com/css2?family=Alex+Brush&family=Playfair+Display:ital@1&family=Poppins:wght@600&display=swap');
 
-body {
-  letter-spacing: 2px;
+
+.fancy-sub-text{
+  font-family: 'Playfair Display', serif;
 }
-
-@font-face {
-  font-family: 'John Davidson Regular';
-  src: url('/assets/john_davidson/John Davidson Demo.ttf');
-}
-
 .fancy-text{
-  font-family: 'John Davidson Regular';
+  font-family: 'Alex Brush', cursive;
+}
+.general-text{
+  font-family: 'Poppins', sans-serif;
+}
+
+.pink-section{
+  background-color: $light-pink;
 }

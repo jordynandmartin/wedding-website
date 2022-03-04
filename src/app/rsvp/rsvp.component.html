@@ -1,48 +1,32 @@
-<div class="container d-none d-md-block">
-	<div class ="row text-center pt-5 pb-3">
-		<div class="col">
-			<h1 class="display-4 d-inline fancy-text">Rebecca</h1>
-			<p class="d-inline">&</p>
-			<h1 class="display-4 d-inline fancy-text">Fasih</h1>
-		</div>
+<div class="container-fluid">
+	<div class="row">
+		<div class="display-4 text-center fancy-text">Celebrate With Us</div>
 	</div>
-</div>
-<app-navigation></app-navigation>
-
-<div *ngIf="!(rsvpSubmitted || errorOccured || loading)" class="container-fluid">
 	<div class="row align-items-center justify-content-center">
 		<div class="col-lg-6 col-md-6 col-8 py-4">
-			<form [formGroup]= "rsvpForm" (ngSubmit)="submit()">
-				<div class="form-group py-2">
-					<label class="pb-2" for="attendeesList">LIST THE NAMES OF ALL ATTENDEES</label>
-					<textarea formControlName="guestNames" class="form-control" id="attendeesList" rows="3"></textarea>
-					<span class="text-danger" *ngIf="guestNames.invalid && (guestNames.dirty || guestNames.touched)">You must provide a list of names</span>
-				</div>
-				<div class="form-group pb-4 pt-2">
-					<label class="pb-2" for="attendeeNumber">NUMBER OF ATTENDEES</label>
-					<input formControlName="guestNumber" class="form-control" id="attendeeNumber"/>
-					<span class="text-danger" *ngIf="guestNumber.invalid && (guestNumber.dirty || guestNumber.touched)">You must provide a whole number</span>
-				</div>
-				<button type="submit" class="btn btn-outline-dark w-100">SUBMIT</button>
-			</form>	
+				<form [formGroup]= "rsvpForm" (ngSubmit)="submit()">
+					<div class="form-group py-2">
+						<label class="pb-2" for="attendeesList">List the names of all attendees</label>
+						<textarea formControlName="guestNames" class="form-control" id="attendeesList" rows="3"></textarea>
+						<span class="text-danger" *ngIf="guestNames.invalid && (guestNames.dirty || guestNames.touched)">You must provide a list of names</span>
+					</div>
+					<div class="form-group pb-4 pt-2">
+						<label class="pb-2" for="attendeeNumber">Number of attendees</label>
+						<input formControlName="guestNumber" class="form-control" id="attendeeNumber"/>
+						<span class="text-danger" *ngIf="guestNumber.invalid && (guestNumber.dirty || guestNumber.touched)">You must provide a whole number</span>
+					</div>
+					<button type="submit" class="general-text btn btn-outline-dark w-100">RSVP</button>
+				</form>	
 		</div>
 	</div>
-</div>
-<div *ngIf="rsvpSubmitted" class="container-fluid">
-	<div class="row align-items-center justify-content-center">
-		<div class="col-12 text-center pt-5">
-			<h3>THANK YOU</h3>
-			<p>Your RSVP has been submitted</p>
-		</div>
+	<div *ngIf="rsvpSubmitted" class="row text-center">
+		<div class="fancy-sub-text">Thank you.Your RSVP has been submitted.</div>
 	</div>
-</div>
-<div *ngIf="errorOccured" class="container-fluid">
-	<div class="row align-items-center justify-content-center">
-		<div class="col-12 text-center pt-4">
-			<h3>Oops...</h3>
-			<p>An unexpected error has occured. Check your internet connection.</p>
-		</div>
+	<div *ngIf="errorOccured" class="row text-center">
+		<div class="fancy-sub-text text-danger">An unexpected error has occured. Please try again later.</div>
 	</div>
+	<app-loading *ngIf="loading"></app-loading>
 </div>
-<app-loading *ngIf="loading"></app-loading>
+
+
 
