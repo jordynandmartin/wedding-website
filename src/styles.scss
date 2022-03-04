@@ -29,7 +29,12 @@ $navbar-light-hover-color: $blush-pink;
 $navbar-light-active-color: $blush-pink;
 $btn-primary-hover-color: $blush-pink;
 
+
 @import "~bootstrap/scss/bootstrap";
+
+body {
+  letter-spacing: 2px;
+}
 
 @font-face {
   font-family: 'John Davidson Regular';
