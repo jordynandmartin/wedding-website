@@ -1,24 +1,6 @@
-
- <div class ="container-fluid hero-image">
+<div class ="container-fluid hero-image">
     <div class="row">
-        <nav class="navbar navbar-expand-md navbar-dark bg-transparent">
-            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav">
-              <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse justify-content-center" id="navbarNav">
-              <ul class="navbar-nav general-text">
-                <li class="nav-item px-2">
-                  <a class="nav-link" routerLink="/home">HOME</a>
-                </li>
-                <li class="nav-item px-2">
-                  <a class="nav-link" routerLink="/home" fragment="rsvp">RSVP</a>
-                </li>
-                <li class="nav-item px-2">
-                  <a class="nav-link">REGISTRY</a>
-                </li>
-              </ul>
-            </div>
-        </nav>
+      <app-navigation></app-navigation>
     </div>
     <div class="row text-center order-md-first pt-6">
         <div class="fs-5 fancy-sub-text text-white pt-5">The Wedding Celebration Of</div>
@@ -27,6 +9,10 @@
 </div>
 <section class="py-5" id="rsvp">
     <app-rsvp></app-rsvp>
+</section>
+<section class="py-5">
+    <div class="container-fluid">
+    </div>
 </section>
 
 
