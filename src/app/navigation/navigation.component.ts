@@ -8,11 +8,16 @@ import { Component, OnInit, ViewChild, ElementRef, HostListener, AfterViewInit} 
 
 export class NavigationComponent implements OnInit {
 
+  isScrolled = false;
+  
   constructor() { }
 
   ngOnInit(): void {
   }
 
-
+  @HostListener("window:scroll")
+  scrollEvent() {
+      window.pageYOffset >= 80 ? (this.isScrolled = true) : (this.isScrolled = false);
+  }
 
 }

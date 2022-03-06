@@ -1,7 +1,6 @@
 $spacer: 1rem;
 $blush-pink: rgb(228, 192, 192);
 $white: rgb(255, 255, 255);
-$light-pink: #f8f6f3;
 
 $spacers: (
   0: 0,
@@ -32,7 +31,7 @@ $navbar-dark-color: $white;
 
 
 @import "~bootstrap/scss/bootstrap";
-@import url('https://fonts.googleapis.com/css2?family=Alex+Brush&family=Playfair+Display:ital@1&family=Poppins:wght@600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Alex+Brush&family=Montserrat:wght@600&family=Playfair+Display:ital@1&family=Poppins:wght@600&display=swap');
 
 
 .fancy-sub-text{
@@ -42,9 +41,10 @@ $navbar-dark-color: $white;
   font-family: 'Alex Brush', cursive;
 }
 .general-text{
-  font-family: 'Poppins', sans-serif;
+  font-family: 'Montserrat', sans-serif;
+  letter-spacing:2px;
+  font-size: 15px;
 }
-
-.pink-section{
-  background-color: $light-pink;
+.blush-pink{
+  color: $blush-pink;
 }
