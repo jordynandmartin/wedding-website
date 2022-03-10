@@ -1,6 +1,6 @@
 $spacer: 1rem;
-$blush-pink: rgb(228, 192, 192);
 $white: rgb(255, 255, 255);
+$pink: #faf8f7;
 
 $spacers: (
   0: 0,
@@ -46,5 +46,5 @@ $navbar-dark-color: $white;
   font-size: 15px;
 }
 .blush-pink{
-  color: $blush-pink;
+  background-color: $pink;
 }
