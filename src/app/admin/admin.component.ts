@@ -10,16 +10,13 @@ import { Party } from '../party';
 export class AdminComponent implements OnInit {
 
   public parties : Party[] = [];
-  public loading: boolean = false;
   public totalGuests: number = 0;
 
   constructor(private guestService: GuestService ) { }
 
   ngOnInit(): void {
-    this.loading = true;
     this.guestService.getGuests().subscribe(
       (response: Party[]) => {
-        this.loading = false;
         console.log(response);
 
         this.parties = response;
@@ -29,7 +26,6 @@ export class AdminComponent implements OnInit {
                                 .reduce((previous : number, current:number) => previous + current);
       },
       (error) => {
-        this.loading = false;
         console.log(error);
       }
     );

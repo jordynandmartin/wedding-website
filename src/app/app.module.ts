@@ -6,10 +6,11 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { HomeComponent } from './home/home.component';
 import { RsvpComponent } from './rsvp/rsvp.component';
-import { HttpClientModule } from  '@angular/common/http';
+import { HttpClientModule, HTTP_INTERCEPTORS} from  '@angular/common/http';
 import { AdminComponent } from './admin/admin.component';
 import { NavigationComponent } from './navigation/navigation.component';
 import { LoadingComponent } from './loading/loading.component';
+import { LoadingInterceptor } from './loading/loadinginterceptor';
 
 @NgModule({
   declarations: [
@@ -26,7 +27,9 @@ import { LoadingComponent } from './loading/loading.component';
     HttpClientModule,
     ReactiveFormsModule
   ],
-  providers: [],
+  providers: [
+    { provide: HTTP_INTERCEPTORS, useClass: LoadingInterceptor, multi: true }
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
