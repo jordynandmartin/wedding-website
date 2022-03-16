@@ -11,21 +11,24 @@ export class AdminComponent implements OnInit {
 
   public parties : Party[] = [];
   public totalGuests: number = 0;
+  public dataLoaded : boolean = false;
 
   constructor(private guestService: GuestService ) { }
 
   ngOnInit(): void {
+    this.parties = [];
+    this.dataLoaded = false;
     this.guestService.getGuests().subscribe(
       (response: Party[]) => {
-        console.log(response);
-
         this.parties = response;
 
         this.totalGuests = this.parties
                                 .map((party : Party) => party.guestNumber)
                                 .reduce((previous : number, current:number) => previous + current);
+        this.dataLoaded = true;
       },
       (error) => {
+        this.dataLoaded = true;
         console.log(error);
       }
     );
