@@ -21,10 +21,12 @@ export class AdminComponent implements OnInit {
     this.guestService.getGuests().subscribe(
       (response: Party[]) => {
         this.parties = response;
-
-        this.totalGuests = this.parties
+        
+        if(this.parties.length > 0){
+          this.totalGuests = this.parties
                                 .map((party : Party) => party.guestNumber)
                                 .reduce((previous : number, current:number) => previous + current);
+        }
         this.dataLoaded = true;
       },
       (error) => {
