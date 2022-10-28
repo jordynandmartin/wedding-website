@@ -11,11 +11,12 @@ import { Party } from './party';
 export class GuestService {
 	
   private baseUrl: string = "https://weddingrsvp-api.herokuapp.com";
+  private hostId: number = 1;
 	
   constructor(private client: HttpClient) { }
   
   getGuests() : Observable<any> {
-    return this.client.get(this.baseUrl + "/guests");
+    return this.client.get(this.baseUrl + "/guests/" + this.hostId);
   }
   
   addGuests(party : Party) : Observable<any>{

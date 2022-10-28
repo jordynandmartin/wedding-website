@@ -6,7 +6,7 @@ import { BehaviorSubject, delay, Observable, of, switchMap } from 'rxjs';
 })
 export class LoadingService {
 
-  private static MINUTE : number = 1000;
+  private static MINUTE : number = 100;
   private timeout : any;
   public isLoading : BehaviorSubject<Boolean> = new BehaviorSubject<Boolean>(false);
 
