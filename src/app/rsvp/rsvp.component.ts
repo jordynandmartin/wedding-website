@@ -41,6 +41,7 @@ export class RsvpComponent implements OnInit {
       if(this.rsvpForm.valid){
         this.party.guestNumber = parseInt(this.guestNumber.value);
         this.party.guestNames = this.guestNames.value;
+        this.party.hostId = 1;
 
         this.guestService.addGuests(this.party).subscribe(
           (response : any) => {
