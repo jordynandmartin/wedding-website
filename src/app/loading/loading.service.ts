@@ -13,13 +13,13 @@ export class LoadingService {
   constructor() { }
 
   loading(){
-    this.timeout = setTimeout(() => {
+    //this.timeout = setTimeout(() => {
       this.isLoading.next(true);
-    }, LoadingService.MINUTE)
+    //}, LoadingService.MINUTE)
   }
 
   notLoading(){
     this.isLoading.next(false);
-    clearTimeout(this.timeout);
+    //clearTimeout(this.timeout);
   }
 }
