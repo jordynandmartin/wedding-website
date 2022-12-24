@@ -10,11 +10,24 @@
     text-align: center;
   }
 
-  .sitetitle {
+  .hero-image-text {
     position: absolute;
     top: 60%;
     left: 50%;
     transform: translate(-50%, -50%);
+  }
+
+  .names-text{
     font-family: 'Honeymoon Avenue';
     font-size: 100px;
+    font-weight: 500;
   }
+
+  .date-text{
+    font-family: 'Montserrat', sans-serif;
+    font-size: 40px;
+  }
+
+
+
+
